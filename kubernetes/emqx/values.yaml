@@ -60,13 +60,13 @@ persistence:
   ## So, for example, the name can depend on .Release or .Chart
   # existingClaim: ""
 
-resources: {}
-  # limits:
-  #   cpu: 500m
-  #   memory: 512Mi
-  # requests:
-  #   cpu: 500m
-  #   memory: 512Mi
+resources: 
+    limits:
+      cpu: 500m
+      memory: 512Mi
+    requests:
+      cpu: 500m
+      memory: 512Mi
 
 extraVolumeMounts: []
 ## Additional volumeMounts to the default backend container.
