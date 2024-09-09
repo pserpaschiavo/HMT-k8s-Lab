@@ -32,6 +32,7 @@ setup-vcluster:
 setup-emqx:
 	@helm repo add emqx https://repos.emqx.io/charts
 	@helm repo update
+	@kubectl apply -f kubernetes/emqx/volumes.yaml
 	@helm install emqx-broker emqx/emqx \
   		--namespace emqx-service \
 		--create-namespace \
@@ -40,6 +41,7 @@ setup-emqx:
 setup-mosquitto:
 	@helm repo add t3n https://storage.googleapis.com/t3n-helm-charts
 	@helm repo update
+	@kubectl apply -f kubernetes/mosquitto/volumes.yaml
 	@helm install mosquitto-broker t3n/mosquitto --version 2.4.1 \
                 --namespace mosquitto-service \
                 --create-namespace \

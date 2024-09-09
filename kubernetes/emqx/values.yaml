@@ -65,8 +65,8 @@ resources:
       cpu: 500m
       memory: 512Mi
     requests:
-      cpu: 500m
-      memory: 512Mi
+      cpu: 100m
+      memory: 256Mi
 
 extraVolumeMounts: []
 ## Additional volumeMounts to the default backend container.

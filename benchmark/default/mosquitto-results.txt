@@ -1,0 +1,40 @@
+Sun  8 Sep 21:37:05 -03 2024
+
+========= TOTAL (2000) =========
+Total Ratio:                 1.000 (200000/200000)
+Total Runtime (sec):         200.986
+Average Runtime (sec):       100.052
+Msg time min (ms):           0.113
+Msg time max (ms):           12.644
+Msg time mean mean (ms):     0.296
+Msg time mean std (ms):      0.060
+Average Bandwidth (msg/sec): 0.999
+Total Bandwidth (msg/sec):   1998.965
+Sun  8 Sep 21:40:26 -03 2024
+Sun  8 Sep 21:43:26 -03 2024
+
+========= TOTAL (4000) =========
+Total Ratio:                 1.000 (400000/400000)
+Total Runtime (sec):         501.968
+Average Runtime (sec):       100.052
+Msg time min (ms):           0.117
+Msg time max (ms):           11.354
+Msg time mean mean (ms):     0.263
+Msg time mean std (ms):      0.045
+Average Bandwidth (msg/sec): 0.999
+Total Bandwidth (msg/sec):   3997.910
+Sun  8 Sep 21:51:48 -03 2024
+Sun  8 Sep 21:54:48 -03 2024
+
+========= TOTAL (6000) =========
+Total Ratio:                 1.000 (600000/600000)
+Total Runtime (sec):         702.870
+Average Runtime (sec):       100.052
+Msg time min (ms):           0.107
+Msg time max (ms):           209.249
+Msg time mean mean (ms):     0.284
+Msg time mean std (ms):      0.096
+Average Bandwidth (msg/sec): 0.999
+Total Bandwidth (msg/sec):   5996.901
+Sun  8 Sep 22:06:31 -03 2024
+Sun  8 Sep 22:09:31 -03 2024
