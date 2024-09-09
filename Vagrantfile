@@ -17,7 +17,7 @@ Vagrant.configure("2") do |config|
         end
     end
 
-    (1..2).each do |i|
+    (1..1).each do |i|
         config.vm.define "worker-#{i}" do |k8s|
             k8s.vm.box = "ubuntu/focal64"
             k8s.vm.hostname = "worker-#{i}"

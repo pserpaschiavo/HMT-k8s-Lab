@@ -2,8 +2,10 @@ HNC_VERSION=v1.1.0
 HNC_VARIANT=default
 GOPATH=/home/ubuntu/go
 
-setup-loadbalancer:
+setup-metallb:
 	@kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.14.8/config/manifests/metallb-native.yaml
+
+setup-loadbalancer:
 	@kubectl apply -f kubernetes/loadbalancer/loadbalancer.yaml
 
 setup-cert-manager:
@@ -32,21 +34,21 @@ setup-vcluster:
 setup-emqx:
 	@helm repo add emqx https://repos.emqx.io/charts
 	@helm repo update
-	@kubectl apply -f kubernetes/emqx/volumes.yaml
 	@helm install emqx-broker emqx/emqx \
   		--namespace emqx-service \
 		--create-namespace \
 		--values kubernetes/emqx/values.yaml
+	@kubectl apply -f kubernetes/emqx/volumes.yaml
 
 setup-mosquitto:
 	@helm repo add t3n https://storage.googleapis.com/t3n-helm-charts
 	@helm repo update
-	@kubectl apply -f kubernetes/mosquitto/volumes.yaml
 	@helm install mosquitto-broker t3n/mosquitto --version 2.4.1 \
                 --namespace mosquitto-service \
                 --create-namespace \
                 --values kubernetes/mosquitto/values.yaml
-	
+	@kubectl apply -f kubernetes/mosquitto/volumes.yaml
+
 setup-mqtt-benchmark:
 	@go install github.com/krylovsk/mqtt-benchmark@main
 

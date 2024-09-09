@@ -13,3 +13,18 @@ spec:
     - ReadWriteOnce
   hostPath:
     path: "/mnt"
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mosquitto-volume-claim
+  namespace: mosquitto-service
+spec:
+  # storageClassName: manual
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  volumeName: mosquitto-broker
