@@ -45,3 +45,43 @@ Sun  8 Sep 22:09:31 -03 2024
 NOVOS TESTES
 
 
+Tue 10 Sep 12:56:21 -03 2024
+
+========= TOTAL (2000) =========
+Total Ratio:                 1.000 (200000/200000)
+Total Runtime (sec):         200.975
+Average Runtime (sec):       100.052
+Msg time min (ms):           0.108
+Msg time max (ms):           13.433
+Msg time mean mean (ms):     0.280
+Msg time mean std (ms):      0.054
+Average Bandwidth (msg/sec): 0.999
+Total Bandwidth (msg/sec):   1998.953
+Tue 10 Sep 12:59:42 -03 2024
+Tue 10 Sep 13:02:42 -03 2024
+
+========= TOTAL (4000) =========
+Total Ratio:                 1.000 (400000/400000)
+Total Runtime (sec):         501.930
+Average Runtime (sec):       100.052
+Msg time min (ms):           0.109
+Msg time max (ms):           16.137
+Msg time mean mean (ms):     0.252
+Msg time mean std (ms):      0.042
+Average Bandwidth (msg/sec): 0.999
+Total Bandwidth (msg/sec):   3997.918
+Tue 10 Sep 13:11:04 -03 2024
+Tue 10 Sep 13:14:04 -03 2024
+
+========= TOTAL (6000) =========
+Total Ratio:                 1.000 (600000/600000)
+Total Runtime (sec):         702.879
+Average Runtime (sec):       100.052
+Msg time min (ms):           0.115
+Msg time max (ms):           23.947
+Msg time mean mean (ms):     0.263
+Msg time mean std (ms):      0.055
+Average Bandwidth (msg/sec): 0.999
+Total Bandwidth (msg/sec):   5996.909
+Tue 10 Sep 13:25:47 -03 2024
+Tue 10 Sep 13:28:47 -03 2024

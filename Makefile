@@ -59,3 +59,16 @@ setup-mqtt-stresser:
 	@cp ${GOPATH}/src/github.com/inovex/mqtt-stresser/build/mqtt-stresser-linux-amd64 ${GOPATH}/bin/mqtt-stresser
 
 
+setup-default-emqx:
+	@helm repo add emqx https://repos.emqx.io/charts
+	@helm repo update
+	@helm install emqx-broker emqx/emqx \
+		--values kubernetes/emqx/values.yaml
+	@kubectl apply -f kubernetes/emqx/volumes.yaml
+
+setup-default-mosquitto:
+	@helm repo add t3n https://storage.googleapis.com/t3n-helm-charts
+	@helm repo update
+	@helm install mosquitto-broker t3n/mosquitto --version 2.4.1 \
+                --values kubernetes/mosquitto/values.yaml
+	@kubectl apply -f kubernetes/mosquitto/volumes.yaml
