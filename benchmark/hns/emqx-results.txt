@@ -38,3 +38,47 @@ Average Bandwidth (msg/sec): 0.983
 Total Bandwidth (msg/sec):   5898.507
 Sun  8 Sep 23:00:22 -03 2024
 Sun  8 Sep 23:03:22 -03 2024
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+Tue 10 Sep 11:43:34 -03 2024
+
+========= TOTAL (2000) =========
+Total Ratio:                 1.000 (200000/200000)
+Total Runtime (sec):         200.963
+Average Runtime (sec):       100.052
+Msg time min (ms):           0.165
+Msg time max (ms):           16.925
+Msg time mean mean (ms):     0.504
+Msg time mean std (ms):      0.138
+Average Bandwidth (msg/sec): 0.999
+Total Bandwidth (msg/sec):   1998.956
+Tue 10 Sep 11:46:55 -03 2024
+Tue 10 Sep 11:49:55 -03 2024
+
+========= TOTAL (4000) =========
+Total Ratio:                 1.000 (400000/400000)
+Total Runtime (sec):         501.898
+Average Runtime (sec):       100.052
+Msg time min (ms):           0.159
+Msg time max (ms):           23.939
+Msg time mean mean (ms):     0.413
+Msg time mean std (ms):      0.085
+Average Bandwidth (msg/sec): 0.999
+Total Bandwidth (msg/sec):   3997.921
+Tue 10 Sep 11:58:17 -03 2024
+Tue 10 Sep 12:01:17 -03 2024
+
+========= TOTAL (6000) =========
+Total Ratio:                 1.000 (600000/600000)
+Total Runtime (sec):         702.787
+Average Runtime (sec):       100.052
+Msg time min (ms):           0.160
+Msg time max (ms):           19.294
+Msg time mean mean (ms):     0.429
+Msg time mean std (ms):      0.096
+Average Bandwidth (msg/sec): 0.999
+Total Bandwidth (msg/sec):   5996.911
+Tue 10 Sep 12:13:00 -03 2024
+Tue 10 Sep 12:16:00 -03 2024
