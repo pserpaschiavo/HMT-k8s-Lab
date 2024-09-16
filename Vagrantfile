@@ -13,6 +13,12 @@ Vagrant.configure("2") do |config|
               vb.gui = false
               vb.cpus = 4
               vb.memory = "4096"
+
+            k8s.vm.provision :shell, privileged: true, :path => "setup-vm/containerd.sh"
+            k8s.vm.provision :shell, privileged: true, :path => "setup-vm/kubeadm-master.sh"
+            k8s.vm.provision :shell, privileged: true, :path => "setup-vm/setIP.sh"
+
+            
             end
         end
     end
@@ -31,6 +37,12 @@ Vagrant.configure("2") do |config|
               vb.gui = false
               vb.cpus = 2
               vb.memory = "4096"
+            
+            k8s.vm.provision :shell, privileged: false, :path => "setup-vm/containerd.sh"
+            k8s.vm.provision :shell, privileged: true, :path => "setup-vm/kubeadm-worker.sh"
+            k8s.vm.provision :shell, privileged: true, :path => "setup-vm/setIP.sh"
+
+
             end
         end
     end
