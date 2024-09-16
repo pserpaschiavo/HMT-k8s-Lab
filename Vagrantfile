@@ -8,17 +8,16 @@ Vagrant.configure("2") do |config|
             k8s.ssh.insert_key = false
             k8s.ssh.private_key_path = ['~/.vagrant.d/insecure_private_key', '~/.ssh/id_rsa']
             k8s.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "~/.ssh/authorized_keys"
+            
+            k8s.vm.provision :shell, privileged: true, :path => "setup-vm/containerd.sh"
+            k8s.vm.provision :shell, privileged: true, :path => "setup-vm/kubeadm-master.sh"
+            k8s.vm.provision :shell, privileged: true, :path => "setup-vm/setIP.sh"
 
             k8s.vm.provider "virtualbox" do |vb|
               vb.gui = false
               vb.cpus = 4
               vb.memory = "4096"
 
-            k8s.vm.provision :shell, privileged: true, :path => "setup-vm/containerd.sh"
-            k8s.vm.provision :shell, privileged: true, :path => "setup-vm/kubeadm-master.sh"
-            k8s.vm.provision :shell, privileged: true, :path => "setup-vm/setIP.sh"
-
-            
             end
         end
     end
@@ -33,16 +32,15 @@ Vagrant.configure("2") do |config|
             k8s.ssh.private_key_path = ['~/.vagrant.d/insecure_private_key', '~/.ssh/id_rsa']
             k8s.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "~/.ssh/authorized_keys"
 
+            k8s.vm.provision :shell, privileged: true, :path => "setup-vm/containerd.sh"
+            k8s.vm.provision :shell, privileged: true, :path => "setup-vm/kubeadm-worker.sh"
+            k8s.vm.provision :shell, privileged: true, :path => "setup-vm/setIP.sh"
+
             k8s.vm.provider "virtualbox" do |vb|
               vb.gui = false
               vb.cpus = 2
               vb.memory = "4096"
             
-            k8s.vm.provision :shell, privileged: false, :path => "setup-vm/containerd.sh"
-            k8s.vm.provision :shell, privileged: true, :path => "setup-vm/kubeadm-worker.sh"
-            k8s.vm.provision :shell, privileged: true, :path => "setup-vm/setIP.sh"
-
-
             end
         end
     end
