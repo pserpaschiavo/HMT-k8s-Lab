@@ -1,9 +1,0 @@
-## Configurando nodes para acertar o IP:
-# IP="seu ip"
-# echo "KUBELET_EXTRA_ARGS=--node-ip=$IP" > /etc/default/kubelet
-# systemctl daemon-reload
-# systemctl restart kubelet
-
-
-## Alterando permissões do .kube/config
-#chmod 600 ~/.kube/config
