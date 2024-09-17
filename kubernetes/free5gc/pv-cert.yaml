@@ -1,24 +1,24 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-name: free5gc-pv-cert
-labels:
+  name: free5gc-pv-cert
+  labels:
     project: free5gc
 spec:
-capacity:
+  capacity:
     storage: 2Mi
-accessModes:
-- ReadOnlyMany
-persistentVolumeReclaimPolicy: Retain
-storageClassName: microk8s-hostpath
-local:
+  accessModes:
+    - ReadOnlyMany
+  persistentVolumeReclaimPolicy: Retain
+  # storageClassName: ""
+  local:
     path: /home/vagrant/certs
-nodeAffinity:
+  nodeAffinity:
     required:
-    nodeSelectorTerms:
-    - matchExpressions:
+      nodeSelectorTerms:
+      - matchExpressions:
         - key: kubernetes.io/hostname
-        operator: In
-        values:
-        - worker-1
+          operator: In
+          values:
+          - worker-1
 

@@ -2,6 +2,10 @@ HNC_VERSION=v1.1.0
 HNC_VARIANT=default
 GOPATH=/home/ubuntu/go
 
+setup-calico: 
+	@kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.28.1/manifests/tigera-operator.yaml
+	@kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.28.1/manifests/custom-resources.yaml
+
 setup-metallb:
 	@kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.14.8/config/manifests/metallb-native.yaml
 
@@ -15,6 +19,9 @@ setup-cert-manager:
   		--namespace cert-manager \
   		--create-namespace \
   		--set crds.enabled=true
+
+setup-multus:
+	@kubectl apply -f https://raw.githubusercontent.com/k8snetworkplumbingwg/multus-cni/master/deployments/multus-daemonset-thick.yml
 
 setup-prometheus:
 	@helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
@@ -49,15 +56,6 @@ setup-mosquitto:
                 --values kubernetes/mosquitto/values.yaml
 	@kubectl apply -f kubernetes/mosquitto/volumes.yaml
 
-setup-mqtt-benchmark:
-	@go install github.com/krylovsk/mqtt-benchmark@main
-
-setup-mqtt-stresser:
-	@mkdir -p ${GOPATH}/src/github.com/inovex/
-	@git clone https://github.com/inovex/mqtt-stresser.git ${GOPATH}/src/github.com/inovex/mqtt-stresser/
-	@cd ${GOPATH}/src/github.com/inovex/mqtt-stresser && make
-	@cp ${GOPATH}/src/github.com/inovex/mqtt-stresser/build/mqtt-stresser-linux-amd64 ${GOPATH}/bin/mqtt-stresser
-
 
 setup-default-emqx:
 	@helm repo add emqx https://repos.emqx.io/charts
@@ -72,3 +70,4 @@ setup-default-mosquitto:
 	@helm install mosquitto-broker t3n/mosquitto --version 2.4.1 \
                 --values kubernetes/mosquitto/values.yaml
 	@kubectl apply -f kubernetes/mosquitto/volumes.yaml
+

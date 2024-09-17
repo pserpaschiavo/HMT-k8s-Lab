@@ -1,7 +1,8 @@
 #!/bin/bash
 
-sudo apt update
-sudo apt ugrade --yes
+sudo apt-get update
+sudo apt-get install -y gcc make
+sudo apt-get ugrade --yes
 
 ### Preparation for Container Runtime (containerd):
 # sysctl params required by setup, params persist across reboots
