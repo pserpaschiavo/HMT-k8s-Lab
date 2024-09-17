@@ -35,5 +35,6 @@ echo "Done!"
 
 kubeadm init --apiserver-advertise-address=172.89.0.11 --pod-network-cidr=192.168.0.0/16
 
-kubeadm token create --print-join-command > /home/vagrant/token.txt
+cp /etc/kubernetes/admin.conf mnt/.kube/config
 
+kubeadm token create --print-join-command > tmp/.join/token
