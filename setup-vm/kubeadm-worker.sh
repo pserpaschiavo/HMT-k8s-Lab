@@ -1,7 +1,5 @@
 #!/bin/bash
 
-clear 
-
 sudo apt-get update
 # apt-transport-https may be a dummy package; if so, you can skip that package
 
@@ -23,12 +21,10 @@ echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.
 
 echo "Done!"
 
-clear
-
 echo "Updating apt package index, installing kubelet, kubeadm and kubectl and hold them"
 
 sudo apt-get update
 sudo apt-get install -y kubelet kubeadm kubectl
 sudo apt-mark hold kubelet kubeadm kubectl
 
-eval "$(cat tmp/.join/token)"
+eval "$(cat /tmp/.cluster-join/token)"

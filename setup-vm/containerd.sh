@@ -1,8 +1,7 @@
 #!/bin/bash
 
-export DEBIAN_FRONTEND=noninteractive
 sudo apt update
-sudo apt -y ugrade
+sudo apt ugrade --yes
 
 ### Preparation for Container Runtime (containerd):
 # sysctl params required by setup, params persist across reboots
@@ -20,8 +19,6 @@ echo "Done!"
 
 # Verify that net.ipv4.ip_forward is set to 1: 
 sysctl net.ipv4.ip_forward
-
-clear
 
 ## Install Docker Engine:
 # Add Docker's official GPG key:
@@ -46,15 +43,13 @@ sudo apt-get update
 
 echo "Done!"
 
-clear
 # To install the latest version:
 echo "Installing Docker packages"
 
 sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 echo "Done!"
-
-clear 
+ 
 ## Containerd Config Default:
 echo "Setup Containerd Config Default"
 

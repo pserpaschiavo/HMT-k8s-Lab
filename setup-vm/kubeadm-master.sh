@@ -1,7 +1,5 @@
 #!/bin/bash
 
-clear 
-
 sudo apt-get update
 # apt-transport-https may be a dummy package; if so, you can skip that package
 
@@ -23,8 +21,6 @@ echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.
 
 echo "Done!"
 
-clear
-
 echo "Updating apt package index, installing kubelet, kubeadm and kubectl and hold them"
 
 sudo apt-get update
@@ -35,6 +31,6 @@ echo "Done!"
 
 kubeadm init --apiserver-advertise-address=172.89.0.11 --pod-network-cidr=192.168.0.0/16
 
-cp /etc/kubernetes/admin.conf mnt/.kube/config
+cp /etc/kubernetes/admin.conf /mnt/.kube/config
 
-kubeadm token create --print-join-command > tmp/.join/token
+kubeadm token create --print-join-command > /tmp/.cluster-join/token
