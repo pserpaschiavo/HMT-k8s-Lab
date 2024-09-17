@@ -43,7 +43,7 @@ Vagrant.configure("2") do |config|
 
             k8s.vm.provider "virtualbox" do |vb|
               vb.gui = false
-              vb.cpus = 2
+              vb.cpus = 4
               vb.memory = "4096"
             
             end
