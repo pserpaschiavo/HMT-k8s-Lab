@@ -9,7 +9,7 @@ Vagrant.configure("2") do |config|
             k8s.ssh.private_key_path = ['~/.vagrant.d/insecure_private_key', '~/.ssh/id_rsa']
             k8s.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "~/.ssh/authorized_keys"
 
-            k8s.vm.synced_folder "~/.join", "/mnt/.join"
+            k8s.vm.synced_folder "./.cluster-join", "/tmp/.cluster-join"
             k8s.vm.synced_folder "~/.kube", "/mnt/.kube"
 
             k8s.vm.provision :shell, privileged: true, :path => "setup-vm/containerd.sh"

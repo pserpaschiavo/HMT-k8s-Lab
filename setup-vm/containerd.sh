@@ -2,7 +2,7 @@
 
 export DEBIAN_FRONTEND=noninteractive
 sudo apt update
-sudo apt ugrade -y
+sudo apt -y ugrade
 
 ### Preparation for Container Runtime (containerd):
 # sysctl params required by setup, params persist across reboots
