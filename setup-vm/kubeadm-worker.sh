@@ -29,5 +29,5 @@ sudo apt-mark hold kubelet kubeadm kubectl
 
 eval "$(cat /tmp/.cluster-join/token)"
 
-mkdir $HOME/data-mongo
-mkdir $HOME/certs
+mkdir ~/data-mongo
+mkdir ~/certs

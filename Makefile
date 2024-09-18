@@ -6,6 +6,16 @@ setup-calico:
 	@kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.28.1/manifests/tigera-operator.yaml
 	@kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.28.1/manifests/custom-resources.yaml
 
+setup-flannel:
+	@kubectl apply -f https://github.com/flannel-io/flannel/releases/latest/download/kube-flannel.yml
+
+setup-multus:
+	@kubectl apply -f https://raw.githubusercontent.com/k8snetworkplumbingwg/multus-cni/master/deployments/multus-daemonset-thick.yml
+
+setup-free5gc:
+	@kubectl apply -f kubernetes/free5gc/.
+	@helm install -n free5gc free5gc-helm kubernetes/free5gc/charts/free5gc/ --values free5gc/values.yaml
+
 setup-metallb:
 	@kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.14.8/config/manifests/metallb-native.yaml
 
@@ -19,9 +29,6 @@ setup-cert-manager:
   		--namespace cert-manager \
   		--create-namespace \
   		--set crds.enabled=true
-
-setup-multus:
-	@kubectl apply -f https://raw.githubusercontent.com/k8snetworkplumbingwg/multus-cni/master/deployments/multus-daemonset-thick.yml
 
 setup-prometheus:
 	@helm repo add prometheus-community https://prometheus-community.github.io/helm-charts

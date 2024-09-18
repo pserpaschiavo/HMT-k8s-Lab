@@ -12,6 +12,7 @@ Vagrant.configure("2") do |config|
             k8s.vm.synced_folder "./.cluster-join", "/tmp/.cluster-join"
             k8s.vm.synced_folder "~/.kube", "/mnt/.kube"
 
+            k8s.vm.provision :shell, privileged: true, :path => "setup-vm/gtp5g-kernel-module.sh"
             k8s.vm.provision :shell, privileged: true, :path => "setup-vm/containerd.sh"
             k8s.vm.provision :shell, privileged: true, :path => "setup-vm/kubeadm-master.sh"
             k8s.vm.provision :shell, privileged: true, :path => "setup-vm/setIP.sh"
@@ -37,6 +38,7 @@ Vagrant.configure("2") do |config|
 
             k8s.vm.synced_folder "./.cluster-join", "/tmp/.cluster-join"
 
+            k8s.vm.provision :shell, privileged: true, :path => "setup-vm/gtp5g-kernel-module.sh"
             k8s.vm.provision :shell, privileged: true, :path => "setup-vm/containerd.sh"
             k8s.vm.provision :shell, privileged: true, :path => "setup-vm/kubeadm-worker.sh"
             k8s.vm.provision :shell, privileged: true, :path => "setup-vm/setIP.sh"
