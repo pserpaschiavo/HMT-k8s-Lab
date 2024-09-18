@@ -56,6 +56,3 @@ echo "Setup Containerd Config Default"
 containerd config default > /etc/containerd/config.toml
 
 systemctl restart containerd
-
-exit
-echo "Done!"

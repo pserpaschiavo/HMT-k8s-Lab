@@ -78,7 +78,7 @@ upf:
   n4if:  # PFCP
     ipAddress: 10.100.50.241
   n6if:  # DN
-    ipAddress: 172.89.0.21
+    ipAddress: 172.89.0.66
 
   podAnnotations: {}
     # additional annotations

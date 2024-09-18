@@ -38,6 +38,11 @@ Vagrant.configure("2") do |config|
 
             k8s.vm.synced_folder "./.cluster-join", "/tmp/.cluster-join"
 
+            k8s.vm.provision "shell", inline: <<-SHELL
+                mkdir -p /home/vagrant/kubedata
+                mkdir -p /home/vagrant/certs
+            SHELL
+            
             k8s.vm.provision :shell, privileged: true, :path => "setup-vm/gtp5g-kernel-module.sh"
             k8s.vm.provision :shell, privileged: true, :path => "setup-vm/containerd.sh"
             k8s.vm.provision :shell, privileged: true, :path => "setup-vm/kubeadm-worker.sh"
@@ -46,7 +51,7 @@ Vagrant.configure("2") do |config|
             k8s.vm.provider "virtualbox" do |vb|
               vb.gui = false
               vb.cpus = 4
-              vb.memory = "4096"
+              vb.memory = "6144"
             
             end
         end

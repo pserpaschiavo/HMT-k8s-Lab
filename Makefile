@@ -14,7 +14,7 @@ setup-multus:
 
 setup-free5gc:
 	@kubectl apply -f kubernetes/free5gc/.
-	@helm install -n free5gc free5gc-helm kubernetes/free5gc/charts/free5gc/ --values free5gc/values.yaml
+	@helm install -n free5gc free5gc-helm ./kubernetes/free5gc/charts/free5gc/ --values kubernetes/free5gc/charts/free5gc/values.yaml
 
 setup-metallb:
 	@kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.14.8/config/manifests/metallb-native.yaml

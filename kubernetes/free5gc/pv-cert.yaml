@@ -6,11 +6,11 @@ metadata:
     project: free5gc
 spec:
   capacity:
-    storage: 2Mi
+    storage: 10Mi
   accessModes:
     - ReadOnlyMany
   persistentVolumeReclaimPolicy: Retain
-  # storageClassName: ""
+  # storageClassName: " "
   local:
     path: /home/vagrant/certs
   nodeAffinity:

@@ -26,8 +26,6 @@ echo "Updating apt package index, installing kubelet, kubeadm and kubectl and ho
 sudo apt-get update
 sudo apt-get install -y kubelet kubeadm kubectl
 sudo apt-mark hold kubelet kubeadm kubectl
+sudo systemctl enable --now kubelet
 
 eval "$(cat /tmp/.cluster-join/token)"
-
-mkdir ~/data-mongo
-mkdir ~/certs

@@ -6,13 +6,13 @@ metadata:
     project: free5gc
 spec:
   capacity:
-    storage: 8Gi
+    storage: 10Gi
   accessModes:
   - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
   # storageClassName: " "
   local:
-    path: /home/vagrant/data-mongo
+    path: /home/vagrant/kubedata
   nodeAffinity:
     required:
       nodeSelectorTerms:
